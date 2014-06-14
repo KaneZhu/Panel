@@ -73,6 +73,16 @@ namespace Panel.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap throttle_line {
+            get {
+                object obj = ResourceManager.GetObject("throttle-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 未标题_4 {
             get {
                 object obj = ResourceManager.GetObject("未标题-4", resourceCulture);

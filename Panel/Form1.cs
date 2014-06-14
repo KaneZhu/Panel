@@ -15,14 +15,17 @@ namespace Panel
 {
     public partial class controlPanel : Form
     {
+        int LocationY = 346;
         public controlPanel()
         {
             InitializeComponent();
+            battery.Value = 100;
+            pictureBox1.Location = new Point(806, LocationY);
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Copyright ©2014 XJTLU\n\nThanks for Z.Q.Jiang, S.Y.Zhao, Y.X.Zhu.");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -65,15 +68,75 @@ namespace Panel
 
         private void buttonF_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Yes");
+            battery.Value--;
+        }
 
+        private void buttonL_Click(object sender, EventArgs e)
+        {
+            battery.Value++;
+        }
+
+        private void buttonB_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yes");
+        }
+
+        private void buttonR_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yes");
+        }
+
+        private void buttonU_Click(object sender, EventArgs e)
+        {
+           if (LocationY < 347 && LocationY > 169)
+           {
+               LocationY--;
+               pictureBox1.Location = new Point(806, LocationY);
+           }
+        }
+
+        private void buttonD_Click(object sender, EventArgs e)
+        {
+            if (LocationY < 346 && LocationY > 168)
+            {
+                LocationY++;
+                pictureBox1.Location = new Point(806, LocationY);
+            }
         }
 
         private void controlPanel_KeyDown(object sender, KeyEventArgs e)
         {
-            //ctrl+F
-            if(e.KeyCode==Keys.W&&e.Control)
+            //KeyDown checking
+            //ctrl+W
+            if (e.KeyCode == Keys.W)
             {
-                buttonF.PerformClick();
+                buttonF.PerformClick(); //perform as the buttonF is clicked
+            }
+            //ctrl+A
+            if (e.KeyCode == Keys.A)
+            {
+                buttonL.PerformClick();
+            }
+            //ctrl+S
+            if (e.KeyCode == Keys.S)
+            {
+                buttonB.PerformClick();
+            }
+            //ctrl+D
+            if (e.KeyCode == Keys.D)
+            {
+                buttonR.PerformClick();
+            }
+            //ctrl+O
+            if (e.KeyCode == Keys.O)
+            {
+                buttonU.PerformClick();
+            }
+            //ctrl+P
+            if (e.KeyCode == Keys.P)
+            {
+                buttonD.PerformClick();
             }
         }
     }

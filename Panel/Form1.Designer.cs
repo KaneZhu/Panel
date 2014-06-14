@@ -42,14 +42,17 @@
             this.buttonR = new System.Windows.Forms.Button();
             this.buttonU = new System.Windows.Forms.Button();
             this.buttonD = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.diagButton = new System.Windows.Forms.ToolStripButton();
             this.exitButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.battery = new System.Windows.Forms.ProgressBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.motorControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // copyrightLabel
@@ -67,7 +70,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(37, 30);
+            this.tabControl1.Location = new System.Drawing.Point(27, 29);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(200, 100);
@@ -109,7 +112,7 @@
             // 
             this.motorControl.Controls.Add(this.motorCondition);
             this.motorControl.Controls.Add(this.motorBox);
-            this.motorControl.Location = new System.Drawing.Point(816, 26);
+            this.motorControl.Location = new System.Drawing.Point(816, 29);
             this.motorControl.Name = "motorControl";
             this.motorControl.Size = new System.Drawing.Size(200, 100);
             this.motorControl.TabIndex = 3;
@@ -145,6 +148,7 @@
             this.buttonB.TabIndex = 5;
             this.buttonB.Text = "Backward";
             this.buttonB.UseVisualStyleBackColor = true;
+            this.buttonB.Click += new System.EventHandler(this.buttonB_Click);
             // 
             // buttonL
             // 
@@ -154,6 +158,7 @@
             this.buttonL.TabIndex = 5;
             this.buttonL.Text = "Left";
             this.buttonL.UseVisualStyleBackColor = true;
+            this.buttonL.Click += new System.EventHandler(this.buttonL_Click);
             // 
             // buttonR
             // 
@@ -163,6 +168,7 @@
             this.buttonR.TabIndex = 5;
             this.buttonR.Text = "Right";
             this.buttonR.UseVisualStyleBackColor = true;
+            this.buttonR.Click += new System.EventHandler(this.buttonR_Click);
             // 
             // buttonU
             // 
@@ -172,6 +178,7 @@
             this.buttonU.TabIndex = 5;
             this.buttonU.Text = "Throttle Up";
             this.buttonU.UseVisualStyleBackColor = true;
+            this.buttonU.Click += new System.EventHandler(this.buttonU_Click);
             // 
             // buttonD
             // 
@@ -181,15 +188,18 @@
             this.buttonD.TabIndex = 5;
             this.buttonD.Text = "Throttle Down";
             this.buttonD.UseVisualStyleBackColor = true;
+            this.buttonD.Click += new System.EventHandler(this.buttonD_Click);
             // 
-            // pictureBox2
+            // toolStrip1
             // 
-            this.pictureBox2.Image = global::Panel.Properties.Resources.未标题_5;
-            this.pictureBox2.Location = new System.Drawing.Point(816, 168);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 205);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.diagButton,
+            this.exitButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1038, 25);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // diagButton
             // 
@@ -212,22 +222,38 @@
             this.exitButton.Text = "Exit";
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // toolStrip1
+            // battery
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.diagButton,
-            this.exitButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1038, 25);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.battery.Location = new System.Drawing.Point(931, 2);
+            this.battery.Name = "battery";
+            this.battery.Size = new System.Drawing.Size(100, 23);
+            this.battery.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Panel.Properties.Resources.throttle_line;
+            this.pictureBox1.Location = new System.Drawing.Point(796, 168);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 18);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Panel.Properties.Resources.未标题_5;
+            this.pictureBox2.Location = new System.Drawing.Point(816, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 205);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // controlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 536);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.battery);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonR);
             this.Controls.Add(this.buttonL);
@@ -246,12 +272,14 @@
             this.Name = "controlPanel";
             this.Text = "Wireless Control Panel";
             this.Load += new System.EventHandler(this.controlPanel_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.controlPanel_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.motorControl.ResumeLayout(false);
             this.motorControl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +304,8 @@
         private System.Windows.Forms.ToolStripButton diagButton;
         private System.Windows.Forms.ToolStripButton exitButton;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ProgressBar battery;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
