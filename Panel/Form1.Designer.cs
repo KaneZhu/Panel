@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlPanel));
             this.copyrightLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -36,12 +35,16 @@
             this.motorBox = new System.Windows.Forms.CheckBox();
             this.motorControl = new System.Windows.Forms.GroupBox();
             this.motorCondition = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.diagButton = new System.Windows.Forms.ToolStripButton();
-            this.exitButton = new System.Windows.Forms.ToolStripButton();
+            this.buttonF = new System.Windows.Forms.Button();
+            this.buttonB = new System.Windows.Forms.Button();
+            this.buttonL = new System.Windows.Forms.Button();
+            this.buttonR = new System.Windows.Forms.Button();
+            this.buttonU = new System.Windows.Forms.Button();
+            this.buttonD = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.motorControl.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // copyrightLabel
@@ -119,49 +122,88 @@
             this.motorCondition.Text = "Motor condition: Not Run";
             this.motorCondition.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // toolStrip1
+            // buttonF
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.diagButton,
-            this.exitButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1038, 25);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.buttonF.Location = new System.Drawing.Point(130, 333);
+            this.buttonF.Name = "buttonF";
+            this.buttonF.Size = new System.Drawing.Size(97, 51);
+            this.buttonF.TabIndex = 5;
+            this.buttonF.Text = "Forward";
+            this.buttonF.UseVisualStyleBackColor = true;
+            this.buttonF.Click += new System.EventHandler(this.buttonF_Click);
             // 
-            // diagButton
+            // buttonB
             // 
-            this.diagButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.diagButton.Image = ((System.Drawing.Image)(resources.GetObject("diagButton.Image")));
-            this.diagButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.diagButton.Name = "diagButton";
-            this.diagButton.Size = new System.Drawing.Size(23, 22);
-            this.diagButton.Text = "Open Communication Dialog";
-            this.diagButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.diagButton.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            this.buttonB.Location = new System.Drawing.Point(130, 390);
+            this.buttonB.Name = "buttonB";
+            this.buttonB.Size = new System.Drawing.Size(97, 51);
+            this.buttonB.TabIndex = 5;
+            this.buttonB.Text = "Backward";
+            this.buttonB.UseVisualStyleBackColor = true;
             // 
-            // exitButton
+            // buttonL
             // 
-            this.exitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
-            this.exitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(23, 22);
-            this.exitButton.Text = "Exit";
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.buttonL.Location = new System.Drawing.Point(27, 390);
+            this.buttonL.Name = "buttonL";
+            this.buttonL.Size = new System.Drawing.Size(97, 51);
+            this.buttonL.TabIndex = 5;
+            this.buttonL.Text = "Left";
+            this.buttonL.UseVisualStyleBackColor = true;
+            // 
+            // buttonR
+            // 
+            this.buttonR.Location = new System.Drawing.Point(233, 390);
+            this.buttonR.Name = "buttonR";
+            this.buttonR.Size = new System.Drawing.Size(97, 51);
+            this.buttonR.TabIndex = 5;
+            this.buttonR.Text = "Right";
+            this.buttonR.UseVisualStyleBackColor = true;
+            // 
+            // buttonU
+            // 
+            this.buttonU.Location = new System.Drawing.Point(906, 333);
+            this.buttonU.Name = "buttonU";
+            this.buttonU.Size = new System.Drawing.Size(97, 51);
+            this.buttonU.TabIndex = 5;
+            this.buttonU.Text = "Throttle Up";
+            this.buttonU.UseVisualStyleBackColor = true;
+            // 
+            // buttonD
+            // 
+            this.buttonD.Location = new System.Drawing.Point(906, 390);
+            this.buttonD.Name = "buttonD";
+            this.buttonD.Size = new System.Drawing.Size(97, 51);
+            this.buttonD.TabIndex = 5;
+            this.buttonD.Text = "Throttle Down";
+            this.buttonD.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Panel.Properties.Resources.未标题_5;
+            this.pictureBox2.Location = new System.Drawing.Point(816, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 205);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // controlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 536);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.buttonR);
+            this.Controls.Add(this.buttonL);
+            this.Controls.Add(this.buttonD);
+            this.Controls.Add(this.buttonU);
+            this.Controls.Add(this.buttonB);
+            this.Controls.Add(this.buttonF);
             this.Controls.Add(this.motorControl);
             this.Controls.Add(this.copyrightLabel);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Charlemagne Std", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "controlPanel";
             this.Text = "Wireless Control Panel";
@@ -169,8 +211,7 @@
             this.tabControl1.ResumeLayout(false);
             this.motorControl.ResumeLayout(false);
             this.motorControl.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +226,13 @@
         private System.Windows.Forms.CheckBox motorBox;
         private System.Windows.Forms.GroupBox motorControl;
         private System.Windows.Forms.Label motorCondition;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton diagButton;
-        private System.Windows.Forms.ToolStripButton exitButton;
+        private System.Windows.Forms.Button buttonF;
+        private System.Windows.Forms.Button buttonB;
+        private System.Windows.Forms.Button buttonL;
+        private System.Windows.Forms.Button buttonR;
+        private System.Windows.Forms.Button buttonU;
+        private System.Windows.Forms.Button buttonD;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

@@ -62,5 +62,19 @@ namespace Panel
             //exit the application
             Application.Exit();
         }
+
+        private void buttonF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void controlPanel_Key_Down(object sender, KeyEventArgs e)
+        {
+            //ctrl+F
+            if(e.KeyCode==Keys.W&&e.Control)
+            {
+                buttonF.PerformClick();
+            }
+        }
     }
 }
