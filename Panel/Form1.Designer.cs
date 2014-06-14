@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlPanel));
             this.copyrightLabel = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -42,9 +43,13 @@
             this.buttonU = new System.Windows.Forms.Button();
             this.buttonD = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.diagButton = new System.Windows.Forms.ToolStripButton();
+            this.exitButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tabControl1.SuspendLayout();
             this.motorControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // copyrightLabel
@@ -186,6 +191,38 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // diagButton
+            // 
+            this.diagButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.diagButton.Image = ((System.Drawing.Image)(resources.GetObject("diagButton.Image")));
+            this.diagButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.diagButton.Name = "diagButton";
+            this.diagButton.Size = new System.Drawing.Size(23, 22);
+            this.diagButton.Text = "Open Communication Dialog";
+            this.diagButton.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.diagButton.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // exitButton
+            // 
+            this.exitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
+            this.exitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(23, 22);
+            this.exitButton.Text = "Exit";
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.diagButton,
+            this.exitButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1038, 25);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // controlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 14F);
@@ -198,6 +235,7 @@
             this.Controls.Add(this.buttonU);
             this.Controls.Add(this.buttonB);
             this.Controls.Add(this.buttonF);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.motorControl);
             this.Controls.Add(this.copyrightLabel);
             this.Controls.Add(this.tabControl1);
@@ -212,6 +250,8 @@
             this.motorControl.ResumeLayout(false);
             this.motorControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,6 +273,9 @@
         private System.Windows.Forms.Button buttonU;
         private System.Windows.Forms.Button buttonD;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripButton diagButton;
+        private System.Windows.Forms.ToolStripButton exitButton;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 

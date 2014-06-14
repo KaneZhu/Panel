@@ -47,7 +47,7 @@ namespace Panel
 
         private void controlPanel_Load(object sender, EventArgs e)
         {
-
+            this.KeyPreview = true;
         }
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Panel
 
         }
 
-        private void controlPanel_Key_Down(object sender, KeyEventArgs e)
+        private void controlPanel_KeyDown(object sender, KeyEventArgs e)
         {
             //ctrl+F
             if(e.KeyCode==Keys.W&&e.Control)
