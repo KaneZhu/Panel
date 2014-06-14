@@ -69,38 +69,59 @@ namespace Panel
         private void buttonF_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Yes");
-            battery.Value--;
+            if(battery.Value>0)
+            { 
+                battery.Value--; 
+            }
+            
         }
 
         private void buttonL_Click(object sender, EventArgs e)
         {
-            battery.Value++;
+            if (battery.Value > 0)
+            {
+                battery.Value--;
+            }
         }
 
         private void buttonB_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yes");
+            if (battery.Value > 0)
+            {
+                battery.Value--;
+            }
         }
 
         private void buttonR_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yes");
+            if (battery.Value > 0)
+            {
+                battery.Value--;
+            }
         }
 
         private void buttonU_Click(object sender, EventArgs e)
         {
-           if (LocationY < 347 && LocationY > 169)
-           {
-               LocationY--;
-               pictureBox1.Location = new Point(806, LocationY);
-           }
+            if (battery.Value > 0)
+            {
+                battery.Value--;
+            }
+            if (LocationY < 347 && LocationY > 170 && battery.Value > 0)
+            {
+                LocationY = LocationY - 8;
+                pictureBox1.Location = new Point(806, LocationY);
+            }
         }
 
         private void buttonD_Click(object sender, EventArgs e)
         {
-            if (LocationY < 346 && LocationY > 168)
+            if (battery.Value > 0)
             {
-                LocationY++;
+                battery.Value--;
+            }
+            if (LocationY < 346 && LocationY > 169 && battery.Value > 0)
+            {
+                LocationY = LocationY +8;
                 pictureBox1.Location = new Point(806, LocationY);
             }
         }
